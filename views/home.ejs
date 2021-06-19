@@ -1,0 +1,47 @@
+<%- include("./partials/header") %>
+    <div class="container">
+
+        <a href="/user/new"><button class="btn btn-new"><i class="fas fa-plus plus-icon"></i>New User</button></a>
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Action</th>
+            </tr>
+
+            <% users.forEach((user, index)=> { %>
+                <tr>
+                    <td>
+                        <%- index + 1 %>
+                    </td>
+                    <td>
+                        <%= user.name %>
+                    </td>
+                    <td>
+                        <%= user.email %>
+                    </td>
+                    <td>
+                        <%= user.gender %>
+                    </td>
+                    <td>
+                        <div class="edit">
+                            <a href="/user/edit/<%= user.id %>"><button class="btn-pencil"><i class="fas fa-pencil-alt"></i></button></a>
+                        </div>
+                        <form action="/user/<%= user.id %>?_method=DELETE" method="POST" class="delete">
+                            <button type="submit" class="btn-delete">&#x2716;</span></button>
+                        </form>
+                    </td>
+                </tr>
+
+                <% }) %>
+
+
+
+        </table>
+    </div>
+
+    <%- include("./partials/footer") %>

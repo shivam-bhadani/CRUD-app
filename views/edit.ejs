@@ -1,0 +1,12 @@
+<%- include("./partials/header") %>
+    <div class="new-user-body">
+        <div class="form-container">
+            <form action="/user/<%= user.id %>?_method=PUT" method="POST" class="form">
+                <%- include("./partials/form_fields") %>
+                    <input type="submit" class="btn btn-edit" value="Edit">
+            </form>
+            <a href="/" class="back-to-home"><button class="btn btn-cancel">Back to Home</button></a>
+        </div>
+    </div>
+
+    <%- include("./partials/footer") %>

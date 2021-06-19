@@ -1,0 +1,35 @@
+<div class="form-field">
+    <label for="name">Name</label><br>
+    <input type="text" name="name" id="name" value="<%= user.name %>" required>
+</div>
+
+<div class="form-field">
+    <label for="email">Email</label><br>
+    <input type="email" name="email" id="email" value="<%= user.email %>" required>
+</div>
+<div class="form-field">
+    <div class="radio">
+    <input type="radio" id="male" name="gender" value="Male" required
+     <% if(user.gender == 'Male'){ %>
+         <%= "checked" %>
+    <% } %>
+    >
+        <label for="male">Male</label>
+    </div>
+    <div class="radio">
+        <input type="radio" id="female" name="gender" value="Female"
+        <% if(user.gender == 'Female'){ %>
+            <%= "checked" %>
+       <% } %>
+        >
+        <label for="female">Female</label>
+    </div>
+    <div class="radio">
+        <input type="radio" id="other" name="gender" value="Other"
+        <% if(user.gender == 'Other'){ %>
+            <%= "checked" %>
+       <% } %>
+        >
+        <label for="other">Other</label>
+    </div>
+</div>
